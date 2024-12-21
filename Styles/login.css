@@ -31,9 +31,9 @@ h1 {
 	border-radius: 12px;
 	background-color: white;
 	padding-bottom: 10px;
-	- webkit-box-shadow: 3px 0px 10px 0px black;
-	- moz -box-shadow: 3px 0px 10px 0px black;
 	box-shadow: 3px 0px 10px 0px black;
+	/*webkit-box-shadow: 3px 0px 10px 0px black;
+	- moz -box-shadow: 3px 0px 10px 0px black;*/
 
 }
 
@@ -41,7 +41,8 @@ h1 {
 	background-color: transparent;
 	color: black;
 	border: 1px solid black;
-	width: 50% font-family: sans-selif;
+	width: 50% ;
+	font-family: sans-selif;
 	font-size: 18px;
 	transition: 0.9s ease;
 	text-align: center;
