@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form UI</title>
+    <link rel="stylesheet" href="Styles/view2_1.js">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <h1>TECHNO INTERNATIONAL NEWTOWN</h1>
+            <div class="profile-icon" onclick="toggleProfile()">👤</div>
+        </header>
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">×</a>
+            <ul>
+                <li onclick="navigate('home')">Home</li>
+                <li onclick="navigate('about')">About</li>
+                <li onclick="navigate('help')">Help</li>
+            </ul>
+        </div>
+        <div id="myProfileOptions" class="profile-options">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleProfile()">×</a>
+            <ul>
+                <li onclick="navigate('profile')">Profile</li>
+                <li onclick="navigate('signout')">Sign Out</li>
+                <li onclick="navigate('notifications')">Notifications</li>
+                <li onclick="navigate('settings')">Settings</li>
+            </ul>
+        </div>
+
+        <div class="form-container">
+            <h3>Hi! user_name</h3>
+            <div class="form-group">
+                <label for="display">What to display (Marks/Docs)</label>
+                <select id="display">
+                    <option value="">Select an option</option>
+                    <option value="Marks">Marks</option>
+                    <option value="Docs">Docs</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="parameters">Parameters</label>
+                <select id="parameters">
+                    <option value="">Select a parameter</option>
+                    <option value="Parameter1">Admission</option>
+                    <option value="Parameter2">Semester Grades</option>
+                    <option value="Parameter3">Fees</option>
+                    <option value="Parameter4">Parameter 4</option>
+                </select>
+            </div>
+            <button class="submit-button" onclick="handleSubmit()">SUBMIT</button>
+        </div>
+
+        <footer>
+            <p>
+                <a href="https://tint.edu.in/">TINT Official Website</a> | 
+                <a href="https://www.facebook.com/TINTOfficial">TINT Official Facebook Page</a>
+            </p>
+            <p>
+                Techno International New Town (Formerly known as Techno India College of Technology)<br>
+                BLOCK - DG 1/1, ACTION AREA 1 NEW TOWN, RAJARHAT, KOLKATA - 700156<br>
+                Phone: +91-33-23242050<br>
+                Email: info@tict.edu.in
+            </p>
+            <p>
+                &copy; 2020 - Maintained by department of CSE, Techno International New Town
+            </p>
+        </footer>
+    </div>
+
+    <script src="Scripts/view2_1.js"></script>
+</body>
+</html>

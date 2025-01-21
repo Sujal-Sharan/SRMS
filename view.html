@@ -1,101 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Dropdown</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      padding:0;
-    }
-    .container {
-      background-color: white;
-      padding: 30px;
-      height: 80vh;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(148, 111, 111, 0.1);
-      width: 350px;
-      text-align: center;
-    }
-    select, button {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 3px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boxed Professional Webpage</title>
+    <link rel="stylesheet" href="Styles/view.css">
 </head>
 <body>
-  <div class="container">
-    <h2>Hi! user_name</h2>
-    <label for="display">What to display (Marks/Docs)</label>
-    <select id="display" onchange="updateParameters()">
-      <option value="">Select an option</option>
-      <option value="marks">Marks</option>
-      <option value="docs">Docs</option>
-    </select>
-    <label for="parameters">Parameters</label>
-    <select id="parameters">
-      <option value="">Select a parameter</option>
-    </select>
-    <button type="button" onclick="handleSubmit()">SUBMIT</button>
-  </div>
+    <div class="container">
+        <header>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <h1>TECHNO INTERNATIONAL NEWTOWN</h1>
+            <div class="profile-icon" onclick="toggleProfile()">👤</div>
+        </header>
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">×</a>
+            <ul>
+                <li onclick="navigate('home')">Home</li>
+                <li onclick="navigate('about')">About</li>
+                <li onclick="navigate('help')">Help</li>
+            </ul>
+        </div>
+        <div id="myProfileOptions" class="profile-options">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleProfile()">×</a>
+            <ul>
+                <li onclick="navigate('profile')">Profile</li>
+                <li onclick="navigate('signout')">Sign Out</li>
+                <li onclick="navigate('notifications')">Notifications</li>
+                <li onclick="navigate('settings')">Settings</li>
+            </ul>
+        </div>
+        <main>
+            <h1>Welcome Admin</h1>
+            <div class="button-container">
+                <button onclick="viewAction()">VIEW</button>
+                <button onclick="updateAction()">UPDATE</button>
+                <button onclick="deleteAction()">DELETE</button>
+            </div>
+        </main>
+        <footer>
+            <p>
+                <a href="https://tint.edu.in/">TINT Official Website</a> | 
+                <a href="https://www.facebook.com/TINTOfficial">TINT Official Facebook Page</a>
+            </p>
+            <p>
+                Techno International New Town (Formerly known as Techno India College of Technology)<br>
+                BLOCK - DG 1/1, ACTION AREA 1 NEW TOWN, RAJARHAT, KOLKATA - 700156<br>
+                Phone: +91-33-23242050<br>
+                Email: info@tict.edu.in
+            </p>
+            <p>
+                &copy; 2020 - Maintained by department of CSE, Techno International New Town
+            </p>
+        </footer>
+    </div>
 
-  <script>
-    function updateParameters() {
-      const display = document.getElementById("display").value;
-      const parameters = document.getElementById("parameters");
-
-      // Clear previous options
-      parameters.innerHTML = '<option value="">Select a parameter</option>';
-
-      if (display === "marks") {
-        const options = ["CA Marks", "PCA Marks", "Semester wise Marks"];
-        options.forEach(option => {
-          const opt = document.createElement("option");
-          opt.value = option.toLowerCase().replace(/\s+/g, '_');
-          opt.textContent = option;
-          parameters.appendChild(opt);
-        });
-      } else if (display === "docs") {
-        const options = ["Admission Docs", "Sem Grade Docs", "Fees Docs"];
-        options.forEach(option => {
-          const opt = document.createElement("option");
-          opt.value = option.toLowerCase().replace(/\s+/g, '_');
-          opt.textContent = option;
-          parameters.appendChild(opt);
-        });
-      }
-    }
-
-    function handleSubmit() {
-      const display = document.getElementById("display").value;
-      const parameters = document.getElementById("parameters").value;
-
-      if (!display || !parameters) {
-        alert("Please select one option from both !!!");
-        return;
-      }
-
-      alert(`You selected: ${display} - ${parameters}`);
-    }
-  </script>
+    <script src="Scripts/view.js"></script>
 </body>
 </html>
