@@ -3,7 +3,7 @@
     $host = "localhost";    // Hostname (usually 'localhost')
     $username = "root";     // Database username
     $password = "";         // Database password
-    $database = "srms_test";  // Database Name
+    $database = "srms";  // Database Name
 
     // Create connection
     try{

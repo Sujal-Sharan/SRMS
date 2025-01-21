@@ -16,3 +16,5 @@ TODO:
 -- Secure password operation by hashing (DONE)
 -- Add a number only filter for username checking?
 -- Adding a login validation    (DONE)
+
+-- admin : password

@@ -41,25 +41,28 @@
             $hash = password_hash($password, PASSWORD_DEFAULT); // Hash password
 
             try{
-                $sql = "SELECT * FROM login_test WHERE User_Name = '{$username}' AND Password = '{$password}'"; // SQL query to check if user exists and password is correct
-                $result = mysqli_query($conn, $sql);
+                $stmt = $conn->prepare("SELECT * FROM login WHERE username = ?");
+                $stmt->bind_param("s", $_POST['username']);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $user = $result->fetch_assoc();
 
-                if(mysqli_num_rows($result) > 0){
+                if ($user && password_verify($_POST['password'], $user['password'])) {
+                    // $_SESSION['user_id'] = $user['id'];
+                    header('location: Dashboard.html');
+                    exit;
+                } 
+                else {
+                    echo "Incorrect Username or Password";
+                }
 
-                    // echo "Logged in Successfully";
-                    header('Location: view.html');  //Re-direct to another page
-                }
-                else{
-                    echo "Wrong username or password";
-                }
+                $stmt->close();
             }
             catch(mysqli_sql_exception){
-                echo "Error";
+                echo "Error_New";
             }
-
 
         }
     }
     mysqli_close($conn);
 ?>
-<!-- hello <script>alert("VIRUS!!!");</script> -->

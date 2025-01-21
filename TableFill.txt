@@ -1,0 +1,4 @@
+CREATE TABLE `srms`.`login` (`TID` INT NOT NULL AUTO_INCREMENT , `username` VARCHAR(25) NOT NULL , `password` CHAR(255) NOT NULL , `access` INT NOT NULL DEFAULT '1' , PRIMARY KEY (`TID`)) ENGINE = InnoDB;
+
+INSERT INTO `login` (`TID`, `username`, `password`, `access`) VALUES (NULL, 'admin', '$2y$10$Bji/tiq63zJXJVAwcqzqjOgsURwdfpBhJhlYYRt7q8FplFLPW2OMO', '1');
+
