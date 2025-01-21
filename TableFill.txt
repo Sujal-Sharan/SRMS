@@ -1,0 +1,9 @@
+CREATE TABLE `srms`.`login` (`TID` INT NOT NULL AUTO_INCREMENT , `username` VARCHAR(25) NOT NULL , `password` CHAR(255) NOT NULL , `access` INT NOT NULL DEFAULT '1' , PRIMARY KEY (`TID`)) ENGINE = InnoDB;
+
+INSERT INTO `login` (`TID`, `username`, `password`, `access`) VALUES (NULL, 'admin', '$2y$10$Bji/tiq63zJXJVAwcqzqjOgsURwdfpBhJhlYYRt7q8FplFLPW2OMO', '1');
+
+
+CREATE TABLE `srms`.`student` (`SID` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(25) NOT NULL , `gender` CHAR(1) NOT NULL , `stream` CHAR(10) NOT NULL , `roll` CHAR(12) NOT NULL , `registartion` CHAR(16) NOT NULL , `email` VARCHAR(50) NOT NULL , `phone` CHAR(10) NOT NULL , `state` CHAR(30) NOT NULL , `religion` CHAR(30) NOT NULL , `caste` CHAR(30) NOT NULL , `type` CHAR(1) NOT NULL DEFAULT 'R' , PRIMARY KEY (`SID`), UNIQUE (`roll`), UNIQUE (`registartion`)) ENGINE = InnoDB;
+
+INSERT INTO `student` (`SID`, `name`, `gender`, `stream`, `roll`, `registartion`, `email`, `phone`, `state`, `religion`, `caste`, `type`) VALUES (NULL, 'SUJAL', 'M', 'CSE', '18700121081', '211870100110122', 'sujal081@gmail.com', '9876543210', 'WEST BENGAL', 'HINDUISM', 'GEN', 'R');
+
