@@ -1,185 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Interface</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f5f5f5;
-        }
-
-        .mobile-box {
-            width: 375px;
-            height: 667px;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            padding: 10px 20px;
-        }
-
-        .button-icon {
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .welcome-message {
-            margin: 20px 0;
-            font-size: 24px;
-        }
-
-        .button {
-            display: block;
-            width: 200px;
-            padding: 15px;
-            margin: 10px auto;
-            background-color: #e0e0e0;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        .button:hover {
-            background-color: #d0d0d0;
-        }
-
-        .nav-menu,
-        .profile-menu {
-            display: none;
-            position: absolute;
-            top: 50px;
-            left: 0;
-            right: 0;
-            background-color: #f5f5f5;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .nav-menu button,
-        .profile-menu button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border: none;
-            background-color: #e0e0e0;
-            cursor: pointer;
-            text-align: left;
-        }
-
-        .nav-menu button:hover,
-        .profile-menu button:hover {
-            background-color: #d0d0d0;
-        }
-
-        .profile-menu input {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    </style>
+    <title>Boxed Professional Webpage</title>
+    <link rel="stylesheet" href="Styles/view.css">
 </head>
-
 <body>
-    <div class="mobile-box">
-        <div class="header">
-            <button class="button-icon" id="menuButton">☰</button>
-            <button class="button-icon" id="profileButton">👤</button>
+    <div class="container">
+        <header>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <h1>TECHNO INTERNATIONAL NEWTOWN</h1>
+            <div class="profile-icon" onclick="toggleProfile()">👤</div>
+        </header>
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">×</a>
+            <ul>
+                <li onclick="navigate('home')">Home</li>
+                <li onclick="navigate('about')">About</li>
+                <li onclick="navigate('help')">Help</li>
+            </ul>
         </div>
-        <div class="container">
-            <div class="welcome-message">Welcome, {user_name}</div>
-            <button class="button" id="viewButton">VIEW</button>
-            <button class="button" id="updateButton">UPDATE</button>
-            <button class="button" id="createButton">CREATE</button>
+        <div id="myProfileOptions" class="profile-options">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleProfile()">×</a>
+            <ul>
+                <li onclick="navigate('profile')">Profile</li>
+                <li onclick="navigate('signout')">Sign Out</li>
+                <li onclick="navigate('notifications')">Notifications</li>
+                <li onclick="navigate('settings')">Settings</li>
+            </ul>
         </div>
-        <div class="nav-menu" id="navMenu">
-            <button>Home</button>
-            <button>About</button>
-            <button>Help</button>
-        </div>
-        <div class="profile-menu" id="profileMenu">
-            <input type="text" placeholder="Enter text...">
-            <button>Sign Out</button>
-        </div>
+        <main>
+            <h1>Welcome Admin</h1>
+            <div class="button-container">
+                <button onclick="viewAction()">VIEW</button>
+                <button onclick="updateAction()">UPDATE</button>
+                <button onclick="deleteAction()">DELETE</button>
+            </div>
+        </main>
+        <footer>
+            <p>
+                <a href="https://tint.edu.in/">TINT Official Website</a> | 
+                <a href="https://www.facebook.com/TINTOfficial">TINT Official Facebook Page</a>
+            </p>
+            <p>
+                Techno International New Town (Formerly known as Techno India College of Technology)<br>
+                BLOCK - DG 1/1, ACTION AREA 1 NEW TOWN, RAJARHAT, KOLKATA - 700156<br>
+                Phone: +91-33-23242050<br>
+                Email: info@tict.edu.in
+            </p>
+            <p>
+                &copy; 2020 - Maintained by department of CSE, Techno International New Town
+            </p>
+        </footer>
     </div>
 
-    <script>
-        /*document.getElementById('menuButton').addEventListener('click', function() {
-            const navMenu = document.getElementById('navMenu');
-            const profileMenu = document.getElementById('profileMenu');
-            navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
-            profileMenu.style.display = 'none';
-        });
-
-        document.getElementById('profileButton').addEventListener('click', function() {
-            const profileMenu = document.getElementById('profileMenu');
-            const navMenu = document.getElementById('navMenu');
-            profileMenu.style.display = profileMenu.style.display === 'block' ? 'none' : 'block';
-            navMenu.style.display = 'none';
-        });
-
-        document.getElementById('viewButton').addEventListener('click', function() {
-            alert('View button clicked');
-        });
-
-        document.getElementById('updateButton').addEventListener('click', function() {
-            alert('Update button clicked');
-        });
-
-        document.getElementById('createButton').addEventListener('click', function() {
-            alert('Create button clicked');
-        });*/
-        document.getElementById('menuButton').addEventListener('click', function () {
-            const navMenu = document.getElementById('navMenu');
-            const profileMenu = document.getElementById('profileMenu');
-            navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
-            profileMenu.style.display = 'none';
-        });
-
-        document.getElementById('profileButton').addEventListener('click', function () {
-            const profileMenu = document.getElementById('profileMenu');
-            const navMenu = document.getElementById('navMenu');
-            profileMenu.style.display = profileMenu.style.display === 'block' ? 'none' : 'block';
-            navMenu.style.display = 'none';
-        });
-
-        document.getElementById('viewButton').addEventListener('click', function () {
-            window.location.href = 'view2_1.html'; // Redirect to view2.html on button click
-        });
-
-        document.getElementById('updateButton').addEventListener('click', function () {
-            alert('Update button clicked');
-        });
-
-        document.getElementById('createButton').addEventListener('click', function () {
-            alert('Create button clicked');
-        });
-    </script>
+    <script src="Scripts/view.js"></script>
 </body>
-
 </html>

@@ -1,25 +1,12 @@
-* {
-    text-align: center;
-    padding: 5px;
-}
-
-li {
-    list-style-type: none;
-    text-align: center;
-    padding-bottom: 5%;
-}
-
-input {
-    background-color: #333;
-    border: none;
-    border-radius: 2px;
-    text-align: left;
-    color: white;
-}
-
-h1 {
-    font-family: sans-serif;
-    color: #F07334;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ced0ee;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
@@ -41,7 +28,7 @@ header {
     justify-content: center;
     align-items: center;
     padding: 10px 20px;
-    background-color: blue;
+    background-color: rgb(57, 57, 241);
     color: white;
     position: relative;
     box-sizing: border-box;
@@ -85,7 +72,7 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    align-items: center;
+    align-items: center; /* Center align buttons */
 }
 
 button {
@@ -97,7 +84,7 @@ button {
     background-color: #007bff;
     color: white;
     transition: background-color 0.3s ease;
-    width: 150px;
+    width: 250px; /* Reduced button width */
 }
 
 button:hover {

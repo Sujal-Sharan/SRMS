@@ -1,114 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form UI</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f0f4f8;
-    }
-
-    .form-container {
-      width: 300px;
-      padding: 20px;
-      height:80vh;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(161, 199, 22, 0.1);
-    }
-
-    .form-container h3 {
-      margin-bottom: 20px;
-      color: #333;
-      text-align: center;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-      color: #121085;
-    }
-
-    .form-group select {
-      width: 100%;
-      padding: 10px;
-      border: 3px solid #ccc;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-      outline: none;
-      transition: border-color 0.3s ease;
-    }
-
-    .form-group select:focus {
-      border-color: #007bff;
-    }
-
-    .submit-button {
-      width: 100%;
-      padding: 10px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      font-size: 18px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .submit-button:hover {
-      background-color: #0056b3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form UI</title>
+    <link rel="stylesheet" href="Styles/view2_1.js">
 </head>
 <body>
-  <div class="form-container">
-    <h3>Hi! user_name</h3>
-    <div class="form-group">
-      <label for="display">What to display (Marks/Docs)</label>
-      <select id="display">
-        <option value="">Select an option</option>
-        <option value="Marks">Marks</option>
-        <option value="Docs">Docs</option>
-      </select>
+    <div class="container">
+        <header>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <h1>TECHNO INTERNATIONAL NEWTOWN</h1>
+            <div class="profile-icon" onclick="toggleProfile()">👤</div>
+        </header>
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">×</a>
+            <ul>
+                <li onclick="navigate('home')">Home</li>
+                <li onclick="navigate('about')">About</li>
+                <li onclick="navigate('help')">Help</li>
+            </ul>
+        </div>
+        <div id="myProfileOptions" class="profile-options">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleProfile()">×</a>
+            <ul>
+                <li onclick="navigate('profile')">Profile</li>
+                <li onclick="navigate('signout')">Sign Out</li>
+                <li onclick="navigate('notifications')">Notifications</li>
+                <li onclick="navigate('settings')">Settings</li>
+            </ul>
+        </div>
+
+        <div class="form-container">
+            <h3>Hi! user_name</h3>
+            <div class="form-group">
+                <label for="display">What to display (Marks/Docs)</label>
+                <select id="display">
+                    <option value="">Select an option</option>
+                    <option value="Marks">Marks</option>
+                    <option value="Docs">Docs</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="parameters">Parameters</label>
+                <select id="parameters">
+                    <option value="">Select a parameter</option>
+                    <option value="Parameter1">Admission</option>
+                    <option value="Parameter2">Semester Grades</option>
+                    <option value="Parameter3">Fees</option>
+                    <option value="Parameter4">Parameter 4</option>
+                </select>
+            </div>
+            <button class="submit-button" onclick="handleSubmit()">SUBMIT</button>
+        </div>
+
+        <footer>
+            <p>
+                <a href="https://tint.edu.in/">TINT Official Website</a> | 
+                <a href="https://www.facebook.com/TINTOfficial">TINT Official Facebook Page</a>
+            </p>
+            <p>
+                Techno International New Town (Formerly known as Techno India College of Technology)<br>
+                BLOCK - DG 1/1, ACTION AREA 1 NEW TOWN, RAJARHAT, KOLKATA - 700156<br>
+                Phone: +91-33-23242050<br>
+                Email: info@tict.edu.in
+            </p>
+            <p>
+                &copy; 2020 - Maintained by department of CSE, Techno International New Town
+            </p>
+        </footer>
     </div>
-    <div class="form-group">
-      <label for="parameters">Parameters</label>
-      <select id="parameters">
-        <option value="">Select a parameter</option>
-        <option value="Parameter1">Parameter 1</option>
-        <option value="Parameter2">Parameter 2</option>
-        <option value="Parameter3">Parameter 3</option>
-        <option value="Parameter4">Parameter 4</option>
-      </select>
-    </div>
-    <button class="submit-button" onclick="handleSubmit()">SUBMIT</button>
-  </div>
 
-  <script>
-    function handleSubmit() {
-      const display = document.getElementById('display').value;
-      const parameters = document.getElementById('parameters').value;
-
-      if (!display || !parameters) {
-        alert('Please select all fields.');
-        return;
-      }
-
-      alert(`Display: ${display}\nParameters: ${parameters}`);
-    }
-  </script>
+    <script src="Scripts/view2_1.js"></script>
 </body>
 </html>
