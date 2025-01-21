@@ -11,5 +11,10 @@ Update: 15_JAN
 -- Cleaned up bits of code
 
 TODO:
+-- Create a re-usable herder section for all pages and link via php
 -- Create a dashboard page
--- Secure password operation by hashing
+-- Secure password operation by hashing (DONE)
+-- Add a number only filter for username checking?
+-- Adding a login validation    (DONE)
+
+-- admin : password
