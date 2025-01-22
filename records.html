@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Record Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">TECHNO INTERNATIONAL NEW TOWN</div>
+            <ul class="nav-links">
+                <li><a href="#student-records">Student Records</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="student-records" class="section">
+            <h1>Student Records</h1>
+            <div class="controls">
+                <input type="text" placeholder="Search by name or ID" class="search">
+                <button class="btn">Search</button>
+                <button class="btn">Add New Student</button>
+            </div>
+            <table class="records-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Stream</th>
+                        <th>Age</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>Abhik</td>
+                        <td>CSE</td>
+                        <td>21</td>
+                        <td><button class="btn">Edit</button> <button class="btn">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>Bijay</td>
+                        <td>ECE</td>
+                        <td>22</td>
+                        <td><button class="btn">Edit</button> <button class="btn">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>Rohan</td>
+                        <td>IT</td>
+                        <td>21</td>
+                        <td><button class="btn">Edit</button> <button class="btn">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>104</td>
+                        <td>Sagnik</td>
+                        <td>AIML</td>
+                        <td>23</td>
+                        <td><button class="btn">Edit</button> <button class="btn">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+        <section id="profile" class="section">
+            <h1>Your Profile</h1>
+            <div class="profile-container">
+                <p><strong>Name:</strong> Admin</p>
+                <p><strong>Role:</strong> Administrator</p>
+                <button class="btn">Edit Profile</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Student Record Management System. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
