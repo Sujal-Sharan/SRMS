@@ -6,23 +6,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="Styles/login.css">
 </head>
 <body>
     <div class="container">
-		<form action="Login.php" method="post">
+        <header>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <h1>TECHNO INTERNATIONAL NEWTOWN</h1>
+            <div class="profile-icon" onclick="toggleProfile()">👤</div>
+        </header>
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">×</a>
+            <ul>
+                <li onclick="navigate('home')">Home</li>
+                <li onclick="navigate('about')">About</li>
+                <li onclick="navigate('help')">Help</li>
+            </ul>
+        </div>
+        <div id="myProfileOptions" class="profile-options">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleProfile()">×</a>
+            <ul>
+                <li onclick="navigate('profile')">Profile</li>
+                <li onclick="navigate('signout')">Sign Out</li>
+                <li onclick="navigate('notifications')">Notifications</li>
+                <li onclick="navigate('settings')">Settings</li>
+            </ul>
+        </div>
+
+        <main>
             <div class="header">
-                <h1>New Login</h1>
+                <h1>Login</h1>
             </div>
 
-			<label>Username:</label><br>
-			<input type="text" name="username"><br>
-			<label>Password:</label><br>
-			<input type="password" name="password"><br>
-			<input type="submit" name="login" value="Log In">
+            <form name="login" action="login.php" method="post">
+                <ul>
+                    <li>Username: <input class="username" type="text" name="username"></li>
+                    <li>Password: <input class="password" type="password" name="password"></li>
+                </ul>
+                <input type="submit" class="submit" name="login" value="Log In">
+            </form>
+        </main>
 
-		</form>
-	</div>
+        <footer>
+            <p>
+                <a href="https://tint.edu.in/">TINT Official Website</a> | 
+                <a href="https://www.facebook.com/TINTOfficial">TINT Official Facebook Page</a>
+            </p>
+            <p>
+                Techno International New Town (Formerly known as Techno India College of Technology)<br>
+                BLOCK - DG 1/1, ACTION AREA 1 NEW TOWN, RAJARHAT, KOLKATA - 700156<br>
+                Phone: +91-33-23242050<br>
+                Email: info@tict.edu.in
+            </p>
+            <p>
+                &copy; 2020 - Maintained by department of CSE, Techno International New Town
+            </p>
+        </footer>
+    </div>
+
+    <script src="Scripts/login.js"></script>
 </body>
 </html>
 <?php
@@ -49,7 +92,7 @@
 
                 if ($user && password_verify($_POST['password'], $user['password'])) {
                     // $_SESSION['user_id'] = $user['id'];
-                    header('location: Dashboard.html');
+                    header('location: view.html');
                     exit;
                 } 
                 else {
