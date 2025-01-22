@@ -21,7 +21,7 @@ function navigate(action) {
 }
 
 function viewAction() {
-    window.location.href = "view2.html"; // Redirect to view2.html
+    window.location.href = "view2_1.html"; // Redirect to view2.html
 }
 
 function updateAction() {
