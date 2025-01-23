@@ -10,11 +10,15 @@ li {
 }
 
 input {
-    background-color:#8b7474;
+    background-color:#9e9d9dec;
     border: none;
     border-radius: 2px;
     text-align: left;
     color: white;
+}
+
+#button{
+    background-color:#509e2dec;
 }
 
 h1 {

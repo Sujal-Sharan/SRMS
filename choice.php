@@ -171,8 +171,8 @@
     <input type="hidden" name="selected_text" id="selected_text" value="" />
     <input type="submit" name="search" value="Search"/>
 
-    <label> TEST </label>
-    <input type="text" name="abc"/>
+    <!-- <label> TEST </label>
+    <input type="text" name="abc"/> -->
     <!-- <button type="button" onclick="handleSubmit()">SUBMIT</button> -->
   </div>
 

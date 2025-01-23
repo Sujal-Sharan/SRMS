@@ -34,7 +34,7 @@
             </ul>
         </div>
         <main>
-            <h1>Welcome Admin Test</h1>
+            <h1>Welcome Admin</h1>
             <div class="button-container">
                 <form name="homepage_Buttons" action="view.php" method="post">
 
