@@ -39,6 +39,9 @@
             <div class="header">
                 <h1>Update</h1>
             </div>
+            <div>
+                <h4>Enter the new user's details below</h4>
+            </div>
             <form action="UpdateValue.php" method="post">
                 <ul>
                     <li>Enter Username: <input class="username" type="text" name="username" placeholder="Enter new username" required></li>

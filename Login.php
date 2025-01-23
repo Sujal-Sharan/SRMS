@@ -83,7 +83,7 @@
 
             try{
                 $stmt = $conn->prepare("SELECT * FROM login WHERE username = ?");
-                $stmt->bind_param("s", $_POST['username']);
+                $stmt->bind_param("s", $username);
                 $stmt->execute();
                 $result = $stmt->get_result();
                 $user = $result->fetch_assoc(); 

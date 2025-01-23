@@ -70,13 +70,12 @@
 </html>
 <?php
     if(isset($_POST['view'])){
-        // header('location: marks.html');
         header('location: choice.php');
     }
     if(isset($_POST['update'])){
         header('location: UpdateValue.php');
     }
-    // if(isset($_POST['delete'])){
-    //     header('location: marks.html');
-    // }
+    if(isset($_POST['delete'])){
+        header('location: marks.php');  //tmp solution to display marks page
+    }
 ?>

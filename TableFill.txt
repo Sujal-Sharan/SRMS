@@ -7,3 +7,9 @@ CREATE TABLE `srms`.`student` (`SID` INT NOT NULL AUTO_INCREMENT , `name` VARCHA
 
 INSERT INTO `student` (`SID`, `name`, `gender`, `stream`, `roll`, `registartion`, `email`, `phone`, `state`, `religion`, `caste`, `type`) VALUES (NULL, 'SUJAL', 'M', 'CSE', '18700121081', '211870100110122', 'sujal081@gmail.com', '9876543210', 'WEST BENGAL', 'HINDUISM', 'GEN', 'R');
 
+CREATE TABLE `srms`.`internal_marks` (`TIDINT` INT(11) NOT NULL AUTO_INCREMENT , `SID` INT(11) NOT NULL , `SUBID` CHAR(15) NOT NULL , `CA1` INT(2) NOT NULL , `CA2` INT(2) NOT NULL , `CA3` INT(2) NOT NULL , `CA4` INT(2) NOT NULL , PRIMARY KEY (`TIDINT`), UNIQUE (`SID`)) ENGINE = InnoDB;
+
+INSERT INTO `internal_marks` (`TIDINT`, `SID`, `SUBID`, `CA1`, `CA2`, `CA3`, `CA4`) VALUES ('1', '1', '101', '20', '18', '24', '21');
+
+INSERT INTO `internal_marks` (`TIDINT`, `SID`, `SUBID`, `CA1`, `CA2`, `CA3`, `CA4`) VALUES (NULL, '2', '101', '11', '21', '18', '20');
+
