@@ -1,3 +1,6 @@
+<?php
+  include("Database.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -151,18 +154,26 @@
   </div>
 
   <div class="container">
-    <h2>Hi! user_name</h2>
+    <h2>Hi! Admin</h2>
+
     <label for="display">What to display (Marks/Docs)</label>
-    <select id="display" onchange="updateParameters()">
+    <select id="display" onchange="updateParameters(); document.getElementById('selected_text').value=this.options[this.selectedIndex].text">
       <option value="">Select an option</option>
       <option value="marks">Marks</option>
       <option value="docs">Docs</option>
     </select>
+
     <label for="parameters">Parameters</label>
     <select id="parameters">
       <option value="">Select a parameter</option>
     </select>
-    <button type="button" onclick="handleSubmit()">SUBMIT</button>
+    
+    <input type="hidden" name="selected_text" id="selected_text" value="" />
+    <input type="submit" name="search" value="Search"/>
+
+    <label> TEST </label>
+    <input type="text" name="abc"/>
+    <!-- <button type="button" onclick="handleSubmit()">SUBMIT</button> -->
   </div>
 
   <script>
@@ -214,12 +225,22 @@
       profileDropdown.style.display = profileDropdown.style.display === "block" ? "none" : "block";
     }
   </script>
-  <div class="footer">
+  <!-- <div class="footer">
     <p>Techno International New Town (Formerly known as Techno India College of Technology)<br>
       BLOCK - DG 1/1, ACTION AREA 1 NEW TOWN, RAJARHAT, KOLKATA - 700156<br>
       Phone: +91-33-23242050<br>
       Email: <a href="mailto:info@tict.edu.in">info@tict.edu.in</a></p>
     <p>&copy; 2020 - Maintained by the Department of CSE, Techno International New Town</p>
-  </div> 
+  </div>  -->
 </body>
 </html>
+<?php
+
+if(isset($_POST['search']))
+{
+  $makerValue = $_POST['Make']; // make value
+
+  $maker = mysqli_real_escape_string($conn, $_POST['selected_text']); // get the selected text
+  echo $maker;
+}
+ ?>

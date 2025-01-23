@@ -41,8 +41,8 @@
 
             <form name="login" action="login.php" method="post">
                 <ul>
-                    <li>Username: <input class="username" type="text" name="username"></li>
-                    <li>Password: <input class="password" type="password" name="password"></li>
+                    <li>Username: <input class="username" type="text" name="username" ></li>
+                    <li>Password: <input class="password" type="password" name="password" required></li>
                 </ul>
                 <input type="submit" class="submit" name="login" value="Log In">
             </form>
@@ -64,8 +64,6 @@
             </p>
         </footer>
     </div>
-
-    <script src="Scripts/login.js"></script>
 </body>
 </html>
 <?php
@@ -90,9 +88,9 @@
                 $result = $stmt->get_result();
                 $user = $result->fetch_assoc();
 
-                if ($user && password_verify($_POST['password'], $user['password'])) {
+                if ($user && password_verify($password, $user['password'])) {
                     // $_SESSION['user_id'] = $user['id'];
-                    header('location: view.html');
+                    header('location: view.php');
                     exit;
                 } 
                 else {
