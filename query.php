@@ -1,5 +1,5 @@
 <?php
-    include("loginDB.php");   
+    include("Database.php");   
 
     $sql = "SELECT * FROM login_test WHERE User_Name = 'admin'";
     $result = mysqli_query($conn, $sql);

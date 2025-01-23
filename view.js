@@ -20,14 +20,18 @@ function navigate(action) {
     alert(action + ' clicked');
 }
 
-function viewAction() {
-    window.location.href = "view2_3.html"; // Redirect to view2.html
-}
+// function viewAction() {
+//     //window.location.href = "view2_3.php"; // Redirect to view2.html
+//     //window.location.href = "http://localhost/Sem_Project/SRMS/view2_3.php";
+//     window.location.href = "choice.php";
 
-function updateAction() {
-    alert('Update button clicked');
-}
+// }
 
-function deleteAction() {
-    alert('Delete button clicked');
-}
+// function updateAction() {
+//     //alert('Update button clicked');
+//     window.location.href = "choice.php";
+// }
+
+// function deleteAction() {
+//     alert('Delete button clicked');
+// }

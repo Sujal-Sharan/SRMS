@@ -1,10 +1,13 @@
+<?php
+    include("Database.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form UI</title>
-    <link rel="stylesheet" href="Styles/view2_1.css">
+    <title>Boxed Professional Webpage</title>
+    <link rel="stylesheet" href="Styles/view.css">
 </head>
 <body>
     <div class="container">
@@ -30,30 +33,21 @@
                 <li onclick="navigate('settings')">Settings</li>
             </ul>
         </div>
+        <main>
+            <h1>Welcome Admin Test</h1>
+            <div class="button-container">
+                <form name="homepage_Buttons" action="view.php" method="post">
 
-        <div class="form-container">
-            <h3>Hi! user_name</h3>
-            <div class="form-group">
-                <label for="display">What to display (Marks/Docs)</label>
-                <select id="display">
-                    <option value="">Select an option</option>
-                    <option value="Marks">Marks</option>
-                    <option value="Docs">Docs</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="parameters">Parameters</label>
-                <select id="parameters">
-                    <option value="">Select a parameter</option>
-                    <option value="Parameter1">Admission</option>
-                    <option value="Parameter2">Semester Grades</option>
-                    <option value="Parameter3">Fees</option>
-                    <!-- <option value="Parameter4">Parameter 4</option> -->
-                </select>
-            </div>
-            <button class="submit-button" onclick="handleSubmit()">SUBMIT</button>
-        </div>
+                    <input type="submit" name="view" value="VIEW"><br>
+                    <input type="submit" name="update" value="UPDATE"><br>
+                    <input type="submit" name="delete" value="DELETE"><br>
 
+                    <!-- <button onclick="viewAction()">VIEW</button>
+                    <button onclick="updateAction()">UPDATE</button><br>
+                    <button onclick="deleteAction()">DELETE</button> -->
+                </form>
+            </div>
+        </main>
         <footer>
             <p>
                 <a href="https://tint.edu.in/">TINT Official Website</a> | 
@@ -71,6 +65,18 @@
         </footer>
     </div>
 
-    <script src="Scripts/view2_1.js"></script>
+    <script src="Scripts/view.js"></script>
 </body>
 </html>
+<?php
+    if(isset($_POST['view'])){
+        // header('location: marks.html');
+        header('location: choice.php');
+    }
+    if(isset($_POST['update'])){
+        header('location: UpdateValue.php');
+    }
+    // if(isset($_POST['delete'])){
+    //     header('location: marks.html');
+    // }
+?>
