@@ -39,16 +39,15 @@
             <div class="header">
                 <h1>Update</h1>
             </div>
+            <div>
+                <h4>Enter the new user's details below</h4>
+            </div>
             <form action="UpdateValue.php" method="post">
                 <ul>
-                    <li>Enter Username: <input class="username" type="text" name="username" required></li>
-                    <li>Enter Password: <input class="password" type="password" name="password" required></li>
+                    <li>Enter Username: <input class="username" type="text" name="username" placeholder="Enter new username" required></li>
+                    <li>Enter Password: <input class="password" type="password" name="password" placeholder="Enter new password" required></li>
                 </ul>
-                <!-- <label>Enter Username</label>
-                <input type="text" name="username" required><br>
-                <label>Enter Password</label>
-                <input type="text" name="password" required><br> -->
-                <input type="submit" class="submit" name="submit" value="Submit">
+                <input type="submit" id="button" name="submit" value="Submit" onclick="display()">
             </form>
         </main>
 
@@ -68,6 +67,11 @@
             </p>
         </footer>
     </div>
+    <script>
+        function display(){
+            alert("Database updated");
+        }
+    </script>
 </body>
 </html>
 <?php
@@ -90,6 +94,8 @@
                 $stmt->bind_param("ss", $username, $hash);
                 $stmt->execute();
                 $stmt->close();
+                header('location: view.php');
+                exit;
             }
             catch(mysqli_sql_exception){
                 echo "Insert_Error";

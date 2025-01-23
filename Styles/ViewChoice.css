@@ -1,0 +1,313 @@
+/* body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+table {
+border-collapse: collapse;
+width: 100%; 
+}
+
+th, td {
+border-bottom: 1px solid #ccc;
+padding: 10px; 
+text-align: left;
+}
+
+.table{
+    margin-top: 30px;
+    background-color:rgb(205, 199, 199);
+    border-width: 1;
+    border-color:rgb(166, 191, 150);
+}
+.input {
+background-color:#9e9d9dec;
+border: none;
+border-radius: 2px;
+text-align: left;
+color: white;
+}
+.input-button{
+    margin-top: 25px;
+  font-size: medium;
+  box-shadow: none;   
+  border-radius: 2px;
+  text-align: left;
+  color: white;
+  background-color:#509e2dec;
+}
+.header {
+  background-color: #007bff;
+  color: rgb(243, 246, 247);
+  display: flex;
+  height:8vh;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.header .menu-icon,
+.header .profile-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.header .title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.menu-dropdown,
+.profile-dropdown {
+  position: absolute;
+  top: 50px;
+  height:56vh;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+  width: 200px;
+}
+
+.menu-dropdown {
+  left: 20px;
+}
+
+.profile-dropdown {
+  right: 20px;
+}
+
+.menu-dropdown a,
+.profile-dropdown a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-dropdown a:hover,
+.profile-dropdown a:hover {
+  background-color: #333;
+}
+
+.menu-dropdown .close,
+.profile-dropdown .close {
+  text-align: right;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+  color: #007bff;
+}
+
+
+.container {
+  background-color: white;
+  padding: 35px;
+  height: 75vh;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(148, 111, 111, 0.1);
+  width: 350px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+select, button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 3px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.footer {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 16px;
+}
+
+.footer a {
+  color: #ffcc00;
+  text-decoration: none;
+} */
+table {
+  border-collapse: collapse;
+  width: 100%; 
+  }
+  
+  th, td {
+  border-bottom: 1px solid #ccc;
+  padding: 10px; 
+  text-align: left;
+  }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ced0ee;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 50%;
+  max-width: 600px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.menu-icon, .profile-icon {
+  cursor: pointer;
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-icon {
+  left: 10px;
+}
+
+.profile-icon {
+  right: 10px;
+}
+
+header h1 {
+  color: #fcf7f7;
+  font-weight: bold;
+  text-align: center;
+  width: 80%;
+}
+
+main {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  margin: 20px 0;
+  color: #333;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center; /* Center align buttons */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s ease;
+  width: 250px; /* Reduced button width */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+}
+
+footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.sidebar, .profile-options {
+  display: none;
+  position: absolute;
+  top: 60px;
+  height: calc(100% - 60px);
+  background-color: #333;
+  color: white;
+  overflow-y: hidden;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.sidebar {
+  left: 0;
+  width: 250px;
+}
+
+.profile-options {
+  right: 0;
+  width: 250px;
+}
+
+.sidebar ul, .profile-options ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li, .profile-options ul li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebar ul li:hover, .profile-options ul li:hover {
+  background-color: #444;
+}
+
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
