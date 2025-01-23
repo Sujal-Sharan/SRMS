@@ -41,10 +41,10 @@
 
             <form name="login" action="login.php" method="post">
                 <ul>
-                    <li>Username: <input class="username" type="text" name="username" ></li>
-                    <li>Password: <input class="password" type="password" name="password" required></li>
+                    <li>Username: <input class="username" type="text" name="username" placeholder="Enter your username here" required ></li>
+                    <li>Password: <input class="password" type="password" name="password" placeholder="Enter your password here" required></li>
                 </ul>
-                <input type="submit" class="submit" name="login" value="Log In">
+                <input type="submit" id="button" class="submit" name="login" value="Log In">
             </form>
         </main>
 
@@ -86,7 +86,7 @@
                 $stmt->bind_param("s", $_POST['username']);
                 $stmt->execute();
                 $result = $stmt->get_result();
-                $user = $result->fetch_assoc();
+                $user = $result->fetch_assoc(); 
 
                 if ($user && password_verify($password, $user['password'])) {
                     // $_SESSION['user_id'] = $user['id'];
